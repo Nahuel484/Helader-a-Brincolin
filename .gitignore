@@ -1,2 +1,4 @@
 /Heladeria/Heladeria
 /Heladeria/backend/.env
+/Heladeria/backend/node_modules
+/Heladeria/frontend/node_modules

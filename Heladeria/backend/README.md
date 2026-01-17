@@ -96,13 +96,3 @@ JSON
 }
 👤 Autor
 Nahuel Ruiz - Nahuel484
-
----
-
-### Unos últimos consejos para tu entrega:
-
-1. **Archivo .gitignore:** Asegúrate de que tu `.gitignore` tenga `node_modules` y `.env` para que no se suban.
-2. **Carpeta de scripts:** Como incluiste archivos como `createMyAdmin.ts` y `updatePrecios.ts`, es excelente porque demuestra que sabes manejar la base de datos fuera de la API.
-3. **Endpoint de Agregación:** El endpoint `/top-selling` cumple perfectamente con el requisito de "Agregación" solicitado en la página 3 de la consigna.
-
-¡Mucha suerte con la entrega final!

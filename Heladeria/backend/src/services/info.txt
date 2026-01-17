@@ -1,0 +1,26 @@
+Lógica de negocio (ej: crear pedido, calcular descuentos)
+Aquí está la lógica de negocio: las reglas de tu heladería.
+Ejemplo:
+// services/FlavorService.ts
+import { FlavorRepository } from '../repositories/FlavorRepository';
+
+export class FlavorService {
+  private repo = new FlavorRepository();
+
+  async addNewFlavor(name: string, price: number) {
+    // Regla 1: El nombre no puede estar vacío
+    if (!name.trim()) throw new Error("El nombre es obligatorio");
+
+    // Regla 2: El precio debe ser mayor a 0
+    if (price <= 0) throw new Error("El precio debe ser positivo");
+
+    // Si todo está bien, le dice al refrigerador que lo guarde
+    return this.repo.create(name, price);
+  }
+
+  async listAllFlavors() {
+    return this.repo.getAll();
+  }
+}
+✅ Guarda: Las reglas de tu negocio (validaciones, cálculos, lógica).
+❌ No sabe nada de HTTP ni de cómo se llama la API.

@@ -1,0 +1,9 @@
+Utilizamos la arquitecturaa en capas en este proyecto 
+🧱 ¿Qué es la arquitectura en capas?
+Es como organizar tu cocina de helados en estaciones de trabajo:
+
+*Una persona recibe pedidos (el mostrador).
+*Otra prepara los helados (la barra de trabajo).
+*Otra va al refrigerador a buscar ingredientes (el almacén).
+*Y otra lleva la contabilidad (la oficina).
+Cada quien hace su parte sin meterse en el trabajo del otro. Así, si cambias el refrigerador (base de datos), ¡no afecta al que atiende al cliente!

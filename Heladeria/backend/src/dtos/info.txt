@@ -1,0 +1,20 @@
+Data Transfer Objects (opcional, pero útil para validar entradas/salidas)
+Si quieres validar los datos que te envían antes de usarlos, puedes usar DTOs (Data Transfer Objects).
+Ejemplo:
+// dtos/CreateFlavorDto.ts
+export interface CreateFlavorDto {
+  name: string;
+  price: number;
+}
+O con validación usando Zod: zod es una biblioteca de validación de datos.
+// dtos/CreateFlavorDto.ts
+import { z } from 'zod';
+
+export const CreateFlavorSchema = z.object({
+  name: z.string().min(2),
+  price: z.number().positive()
+});
+
+export type CreateFlavorDto = z.infer<typeof CreateFlavorSchema>;
+✅ Guarda: La forma esperada de los datos que entran o salen.
+

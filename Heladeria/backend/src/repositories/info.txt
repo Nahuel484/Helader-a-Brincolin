@@ -1,0 +1,17 @@
+Acceso a datos (interactúa con MongoDB vía Mongoose u otro ODM)
+Este es el que habla directamente con la base de datos. Solo sabe cómo guardar, buscar o borrar helados.
+Ejemplo:
+// repositories/FlavorRepository.ts
+import { Flavor } from '../models/Flavor';
+
+export class FlavorRepository {
+  async getAll() {
+    return await Flavor.find(); // Trae todos los sabores de MongoDB
+  }
+
+  async create(name: string, price: number) {
+    return await Flavor.create({ name, price }); // Guarda uno nuevo
+  }
+}
+✅ Guarda: Código para leer/escribir en la base de datos.
+❌ No decide si se puede crear un helado; solo lo guarda si se lo piden.

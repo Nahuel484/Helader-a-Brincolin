@@ -1,0 +1,14 @@
+Define las rutas de la API (Express)
+Define qué URL hace qué cosa.
+Ejemplo:
+// routes/flavorRoutes.ts
+import { Router } from 'express';
+import { FlavorController } from '../controllers/FlavorController';
+
+const router = Router();
+const controller = new FlavorController();
+
+router.get('/flavors', controller.getAllFlavors);        // Ver todos los sabores
+router.post('/flavors', controller.createFlavor);        // Crear un nuevo sabor
+
+export default router;

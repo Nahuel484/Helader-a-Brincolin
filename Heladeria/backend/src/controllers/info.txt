@@ -1,0 +1,32 @@
+Maneja las peticiones HTTP (Express)
+Este recibe los pedidos de los clientes (las solicitudes HTTP) y les da una respuesta.
+Ejemplo:
+// controllers/FlavorController.ts
+import { Request, Response } from 'express';
+import { FlavorService } from '../services/FlavorService';
+
+export class FlavorController {
+  private service = new FlavorService();
+
+  async createFlavor(req: Request, res: Response) {
+    try {
+      // Toma los datos del cuerpo de la petición
+      const { name, price } = req.body;
+
+      // Le pide al chef (service) que prepare el helado
+      const newFlavor = await this.service.addNewFlavor(name, price);
+
+      // Le entrega el resultado al cliente
+      res.status(201).json(newFlavor);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  }
+
+  async getAllFlavors(req: Request, res: Response) {
+    const flavors = await this.service.listAllFlavors();
+    res.json(flavors);
+  }
+}
+✅ Guarda: Cómo manejar las peticiones y respuestas HTTP.
+❌ No contiene lógica de negocio ni toca la base de datos directamente.

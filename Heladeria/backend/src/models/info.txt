@@ -1,0 +1,14 @@
+efinición de esquemas de MongoDB (con Mongoose)
+Aquí defines cómo se ve un helado o un pedido en la base de datos.
+Ejemplo
+// models/Flavor.ts
+import { Schema, model } from 'mongoose';
+
+const FlavorSchema = new Schema({
+  name: { type: String, required: true },   // Ej: "Chocolate"
+  price: { type: Number, required: true }   // Ej: 2.50
+});
+
+export const Flavor = model('Flavor', FlavorSchema);
+
+✅ Guarda: La estructura de los datos que se guardan en MongoDB.
